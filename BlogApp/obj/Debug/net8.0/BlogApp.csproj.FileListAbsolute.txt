@@ -152,3 +152,15 @@ C:\Users\Sedef\source\repos\BlogSite\BlogApp\obj\Debug\net8.0\refint\BlogApp.dll
 C:\Users\Sedef\source\repos\BlogSite\BlogApp\obj\Debug\net8.0\BlogApp.pdb
 C:\Users\Sedef\source\repos\BlogSite\BlogApp\obj\Debug\net8.0\BlogApp.genruntimeconfig.cache
 C:\Users\Sedef\source\repos\BlogSite\BlogApp\obj\Debug\net8.0\ref\BlogApp.dll
+C:\Users\Sedef\source\repos\BlogApp\BlogApp\obj\Debug\net8.0\BlogApp.csproj.AssemblyReference.cache
+C:\Users\Sedef\source\repos\BlogApp\BlogApp\obj\Debug\net8.0\BlogApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sedef\source\repos\BlogApp\BlogApp\obj\Debug\net8.0\BlogApp.AssemblyInfoInputs.cache
+C:\Users\Sedef\source\repos\BlogApp\BlogApp\obj\Debug\net8.0\BlogApp.AssemblyInfo.cs
+C:\Users\Sedef\source\repos\BlogApp\BlogApp\obj\Debug\net8.0\BlogApp.csproj.CoreCompileInputs.cache
+C:\Users\Sedef\source\repos\BlogApp\BlogApp\obj\Debug\net8.0\BlogApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Sedef\source\repos\BlogApp\BlogApp\obj\Debug\net8.0\BlogApp.RazorAssemblyInfo.cache
+C:\Users\Sedef\source\repos\BlogApp\BlogApp\obj\Debug\net8.0\BlogApp.RazorAssemblyInfo.cs
+C:\Users\Sedef\source\repos\BlogApp\BlogApp\obj\Debug\net8.0\BlogApp.sourcelink.json
+C:\Users\Sedef\source\repos\BlogApp\BlogApp\obj\Debug\net8.0\BlogApp.dll
+C:\Users\Sedef\source\repos\BlogApp\BlogApp\obj\Debug\net8.0\refint\BlogApp.dll
+C:\Users\Sedef\source\repos\BlogApp\BlogApp\obj\Debug\net8.0\BlogApp.pdb
