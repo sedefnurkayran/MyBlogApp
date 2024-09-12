@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 namespace BlogApp.Entity
 {
 
+    //taglere renk atama
     public enum TagColors
     {
         primary, secondary, warning, danger, info, success

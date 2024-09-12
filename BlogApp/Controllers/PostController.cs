@@ -26,6 +26,7 @@ namespace BlogApp.Controllers
         {
             var posts = _postRepository.Posts.Where(i => i.IsActive);
 
+            //taglere tikladigimda ilgili post listesini döndürür.
             if (!string.IsNullOrEmpty(tag))
             {
                 posts = posts.Where(x => x.Tags.Any(t => t.Url == tag));
@@ -36,6 +37,7 @@ namespace BlogApp.Controllers
 
         public async Task<IActionResult> Details(string url)
         {
+            //renk bilgisini taglerden cekmek ve bunu detay sayfasinda da gostermek icin include ile post detayindan taglere ulasma/Postlardan yorumlara da ulasaccagim icin include kullandim.
             return View(await _postRepository.Posts.Include(x => x.User).Include(x => x.Tags).Include(x => x.Comments).ThenInclude(x => x.User).FirstOrDefaultAsync(p => p.Url == url));
         }
 
