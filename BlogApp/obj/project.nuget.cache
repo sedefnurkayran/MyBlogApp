@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tA0Tjvrz1yQ=",
+  "dgSpecHash": "jtdjZh8TNlQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Sedef\\source\\repos\\BlogSite\\BlogApp\\BlogApp.csproj",
+  "projectFilePath": "C:\\Users\\Sedef\\source\\repos\\BlogApp\\BlogApp\\BlogApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sedef\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Sedef\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
