@@ -33,33 +33,33 @@ namespace BlogApp.Controllers
             return View();
         }
 
-        // [HttpPost]
-        // public async Task<IActionResult> Register(RegisterViewModel model)
-        // {
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterViewModel model)
+        {
 
-        //     if (ModelState.IsValid)
-        //     {
-        //         var user = await _userRepository.Users.FirstOrDefaultAsync(x => x.UserName == model.UserName || x.Email == model.Email);
+            if (ModelState.IsValid)
+            {
+                var user = await _userRepository.Users.FirstOrDefaultAsync(x => x.UserName == model.UserName || x.Email == model.Email);
 
-        //         if (user == null)
-        //         {
-        //             _userRepository.CreateUser(new User
-        //             {
-        //                 UserName = model.UserName,
-        //                 Name = model.Name,
-        //                 Email = model.Email,
-        //                 Password = model.Password,
-        //                 Image = "avatar.jpg"
-        //             });
-        //             return RedirectToAction("Login");
-        //         }
-        //         else
-        //         {
-        //             ModelState.AddModelError("", "Username ya da Email kullanımda.");
-        //         }
-        //     }
-        //     return View(model);
-        // }
+                if (user == null)
+                {
+                    _userRepository.CreateUser(new User
+                    {
+                        UserName = model.UserName,
+                        Name = model.Name,
+                        Email = model.Email,
+                        Password = model.Password,
+                        Image = "avatar.jpg"
+                    });
+                    return RedirectToAction("Login");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Username ya da Email kullanımda.");
+                }
+            }
+            return View(model);
+        }
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
