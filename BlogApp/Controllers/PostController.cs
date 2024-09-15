@@ -75,32 +75,36 @@ namespace BlogApp.Controllers
             return View();
         }
 
-        // [HttpPost]
-        // [Authorize]
-        // public IActionResult Create(PostCreateViewModel model)
-        // {
+        [HttpPost]
+        [Authorize]
+        public IActionResult Create(PostCreateViewModel model)
+        {
 
-        //     if (ModelState.IsValid)
-        //     {
-        //         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (ModelState.IsValid)
+            {
+                //ana modeli kullanmadigimiz icin model ile gelen verileri esitleyecegiz.
 
-        //         _postRepository.CreatePost(
-        //             new Post
-        //             {
-        //                 Title = model.Title,
-        //                 Content = model.Content,
-        //                 Description = model.Description,
-        //                 Url = model.Url,
-        //                 UserId = int.Parse(userId ?? ""),
-        //                 Image = "1.png",
-        //                 IsActive = false
-        //             }
-        //         );
-        //         return RedirectToAction("Index");
-        //     }
-        //     return View(model);
-        // }
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
+                _postRepository.CreatePost(
+                    new Post
+                    {
+                        //post olustururken kullanicidan alacagimiz bilgiler.
+                        Title = model.Title,
+                        Content = model.Content,
+                        Description = model.Description,
+                        Url = model.Url,
+                        UserId = int.Parse(userId ?? ""),
+                        Image = "1.png",
+                        IsActive = false
+                    }
+                );
+                return RedirectToAction("Index");
+            }
+            return View(model);
+        }
+
+        //POSTLARIN ROLE GORE LISTELENMESI
         [Authorize]
         public async Task<IActionResult> List()
         {
@@ -117,60 +121,61 @@ namespace BlogApp.Controllers
             return View(await posts.ToListAsync());
         }
 
-        // [Authorize]
-        // public IActionResult Edit(int? id)
-        // {
-        //     if (id == null)
-        //     {
-        //         return NotFound();
-        //     }
-        //     var post = _postRepository.Posts.Include(x => x.Tags).FirstOrDefault(i => i.PostId == id);
+        [Authorize]
+        //GET METODU
+        public IActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var post = _postRepository.Posts.Include(x => x.Tags).FirstOrDefault(i => i.PostId == id);
 
-        //     if (post == null)
-        //     {
-        //         return NotFound();
-        //     }
+            if (post == null)
+            {
+                return NotFound();
+            }
 
-        //     ViewBag.Tags = _tagRepository.Tags.ToList();
-        //     return View(
-        //         new PostCreateViewModel
-        //         {
-        //             PostId = post.PostId,
-        //             Title = post.Title,
-        //             Description = post.Description,
-        //             Content = post.Content,
-        //             Url = post.Url,
-        //             IsActive = post.IsActive,
-        //             Tags = post.Tags
-        //         }
+            ViewBag.Tags = _tagRepository.Tags.ToList();
+            return View(
+                new PostCreateViewModel
+                {
+                    PostId = post.PostId,
+                    Title = post.Title,
+                    Description = post.Description,
+                    Content = post.Content,
+                    Url = post.Url,
+                    IsActive = post.IsActive,
+                    Tags = post.Tags
+                }
 
-        //         );
-        // }
+                );
+        }
 
-        // [Authorize]
-        // [HttpPost]
+        [Authorize]
+        [HttpPost]
 
-        // public IActionResult Edit(PostCreateViewModel model, int[] tagIds)
-        // {
-        //     if (ModelState.IsValid)
-        //     {
-        //         var entityUpdate = new Post
-        //         {
-        //             PostId = model.PostId,
-        //             Title = model.Title,
-        //             Description = model.Description,
-        //             Content = model.Content,
-        //             Url = model.Url,
+        public IActionResult Edit(PostCreateViewModel model, int[] tagIds)
+        {
+            if (ModelState.IsValid)
+            {
+                var entityUpdate = new Post
+                {
+                    PostId = model.PostId,
+                    Title = model.Title,
+                    Description = model.Description,
+                    Content = model.Content,
+                    Url = model.Url,
 
-        //         };
-        //         if (User.FindFirstValue(ClaimTypes.Role) == "admin")
-        //         {
-        //             entityUpdate.IsActive = model.IsActive;
-        //         }
-        //         _postRepository.EditPost(entityUpdate, tagIds);
-        //         return RedirectToAction("List");
-        //     }
-        //     return View(model);
-        // }
+                };
+                if (User.FindFirstValue(ClaimTypes.Role) == "admin")
+                {
+                    entityUpdate.IsActive = model.IsActive;
+                }
+                _postRepository.EditPost(entityUpdate, tagIds);
+                return RedirectToAction("List");
+            }
+            return View(model);
+        }
     }
 }

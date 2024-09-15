@@ -22,7 +22,7 @@ builder.Services.AddScoped<IUserRepository, EfUserRepository>();
 //AUTH islemleri icin cookie yöntemini kullandik.
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
 {
-    options.LoginPath = "/Users/Login";
+    options.LoginPath = "/Users/Login"; //auth olmayan kullanicilar login e gider.
 });
 
 var app = builder.Build();
