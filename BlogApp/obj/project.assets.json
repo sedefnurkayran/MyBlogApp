@@ -3577,11 +3577,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sedef\\source\\repos\\BlogApp\\BlogApp\\BlogApp.csproj",
+      "projectUniqueName": "C:\\Users\\Sedef\\source\\repos\\MyBlogApp\\BlogApp\\BlogApp.csproj",
       "projectName": "BlogApp",
-      "projectPath": "C:\\Users\\Sedef\\source\\repos\\BlogApp\\BlogApp\\BlogApp.csproj",
+      "projectPath": "C:\\Users\\Sedef\\source\\repos\\MyBlogApp\\BlogApp\\BlogApp.csproj",
       "packagesPath": "C:\\Users\\Sedef\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sedef\\source\\repos\\BlogApp\\BlogApp\\obj\\",
+      "outputPath": "C:\\Users\\Sedef\\source\\repos\\MyBlogApp\\BlogApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Sedef\\AppData\\Roaming\\NuGet\\NuGet.Config",

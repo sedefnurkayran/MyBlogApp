@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllersWithViews(); //controller ile birlikte views olusturmasi icin.
+builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<BlogContext>(options =>
 {
@@ -19,10 +19,9 @@ builder.Services.AddScoped<ITagRepository, EfTagRepository>();
 builder.Services.AddScoped<ICommentRepository, EfCommentRepository>();
 builder.Services.AddScoped<IUserRepository, EfUserRepository>();
 
-//AUTH islemleri icin cookie yöntemini kullandik.
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
 {
-    options.LoginPath = "/Users/Login"; //auth olmayan kullanicilar login e gider.
+    options.LoginPath = "/Users/Login";
 });
 
 var app = builder.Build();
@@ -37,7 +36,7 @@ SeedData.TestVerileriniDoldur(app);
 
 app.MapControllerRoute(
     name: "posts_details",
-    pattern: "posts/details/{url}", //patterni href in icine tanimlamak gerek.
+    pattern: "posts/details/{url}",
     defaults: new { controller = "Posts", action = "Details" }
 );
 
@@ -56,8 +55,5 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Posts}/{action=Index}/{id?}"
 );
-
-
-// app.MapGet("/", () => "Hello World!");
 
 app.Run();
