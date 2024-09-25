@@ -51,5 +51,11 @@ namespace BlogApp.Data.Concrete
                 _context.SaveChanges();
             }
         }
+
+        public void SaveChanges(Post id)
+        {
+            _context.Posts.Remove(id);
+            _context.SaveChanges();
+        }
     }
 }

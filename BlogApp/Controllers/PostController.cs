@@ -123,6 +123,28 @@ namespace BlogApp.Controllers
 
         [Authorize]
         //GET METODU
+        public IActionResult DeleteBlog(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var post = _postRepository.Posts.Include(x => x.Tags).FirstOrDefault(i => i.PostId == id);
+
+            if (post == null)
+            {
+                return NotFound();
+            }
+            if (User.FindFirstValue(ClaimTypes.Role) == "admin")
+            {
+                // _postRepository.Posts.Remove(post);
+                _postRepository.SaveChanges(post);
+            }
+            return RedirectToAction("List");
+        }
+
+        [Authorize]
+        //GET METODU
         public IActionResult Edit(int? id)
         {
             if (id == null)

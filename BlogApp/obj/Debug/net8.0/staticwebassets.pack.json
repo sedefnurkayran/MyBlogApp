@@ -21,12 +21,48 @@
       "PackagePath": "staticwebassets\\img\\avatar.jpg"
     },
     {
+      "Id": "C:\\Users\\Sedef\\source\\repos\\MyBlogApp\\BlogApp\\wwwroot\\img\\bosna.jpg",
+      "PackagePath": "staticwebassets\\img\\bosna.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Sedef\\source\\repos\\MyBlogApp\\BlogApp\\wwwroot\\img\\bosna.png",
+      "PackagePath": "staticwebassets\\img\\bosna.png"
+    },
+    {
+      "Id": "C:\\Users\\Sedef\\source\\repos\\MyBlogApp\\BlogApp\\wwwroot\\img\\misir.jpg",
+      "PackagePath": "staticwebassets\\img\\misir.jpg"
+    },
+    {
       "Id": "C:\\Users\\Sedef\\source\\repos\\MyBlogApp\\BlogApp\\wwwroot\\img\\p1.jpg",
       "PackagePath": "staticwebassets\\img\\p1.jpg"
     },
     {
       "Id": "C:\\Users\\Sedef\\source\\repos\\MyBlogApp\\BlogApp\\wwwroot\\img\\p2.jpg",
       "PackagePath": "staticwebassets\\img\\p2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Sedef\\source\\repos\\MyBlogApp\\BlogApp\\wwwroot\\img\\petra1.jpg",
+      "PackagePath": "staticwebassets\\img\\petra1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Sedef\\source\\repos\\MyBlogApp\\BlogApp\\wwwroot\\img\\petra2.jpg",
+      "PackagePath": "staticwebassets\\img\\petra2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Sedef\\source\\repos\\MyBlogApp\\BlogApp\\wwwroot\\img\\sedefnurkayran.PNG",
+      "PackagePath": "staticwebassets\\img\\sedefnurkayran.PNG"
+    },
+    {
+      "Id": "C:\\Users\\Sedef\\source\\repos\\MyBlogApp\\BlogApp\\wwwroot\\img\\wadirum1.jpg",
+      "PackagePath": "staticwebassets\\img\\wadirum1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Sedef\\source\\repos\\MyBlogApp\\BlogApp\\wwwroot\\img\\wadirum2.jpg",
+      "PackagePath": "staticwebassets\\img\\wadirum2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Sedef\\source\\repos\\MyBlogApp\\BlogApp\\wwwroot\\img\\wadirum3.jpeg",
+      "PackagePath": "staticwebassets\\img\\wadirum3.jpeg"
     },
     {
       "Id": "C:\\Users\\Sedef\\source\\repos\\MyBlogApp\\BlogApp\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.css",

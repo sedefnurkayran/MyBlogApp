@@ -22,19 +22,19 @@ namespace BlogApp.Data.Concrete.EfCore
                 if (!context.Tags.Any())
                 {
                     context.Tags.AddRange(
-                        new Tag { Text = "web prograglama", Url = "web-programlama", Color = TagColors.primary },
-                        new Tag { Text = "full-stack", Url = "full-stack", Color = TagColors.danger },
-                        new Tag { Text = "game", Url = "game", Color = TagColors.info },
-                        new Tag { Text = "backend", Url = "backend", Color = TagColors.success },
-                        new Tag { Text = "frounded", Url = "frounded", Color = TagColors.secondary }
+                        new Tag { Text = "egypt", Url = "egypt", Color = TagColors.primary },
+                        new Tag { Text = "jordan", Url = "jordan", Color = TagColors.danger },
+                        new Tag { Text = "petra", Url = "petra", Color = TagColors.info },
+                        new Tag { Text = "pyramids", Url = "pyramids", Color = TagColors.success },
+                        new Tag { Text = "bosnia", Url = "bosnia", Color = TagColors.secondary }
                     );
                     context.SaveChanges();
                 }
                 if (!context.Users.Any())
                 {
                     context.Users.AddRange(
-                        new User { UserName = "ahmetkaya", Name = "Ahmet Kaya", Email = "info@ahmetkaya.com", Password = "123456,", Image = "p1.jpg" },
-                        new User { UserName = "sinankarabulut", Name = "Sinan Karabulut", Email = "info@sinan.com", Password = "123456,", Image = "p2.jpg" }
+                        new User { UserName = "sedefnurkayran", Name = "Sedefnur Kayran", Email = "info@sedefnurkayran.com", Password = "123456,", Image = "sedefnurkayran.PNG" },
+                        new User { UserName = "sefademir", Name = "Sefa Demir", Email = "info@sefademir.com", Password = "123456,", Image = "p2.jpg" }
                     );
                     context.SaveChanges();
                 }
@@ -43,42 +43,45 @@ namespace BlogApp.Data.Concrete.EfCore
                     context.Posts.AddRange(
                         new Post
                         {
-                            Title = "Asp.net Core",
-                            Content = "asp.net core güzel bir kütüphanedir.",
-                            Description = "asp.net core güzeldir",
-                            Url = "asp-net-core",
+                            Title = "The lost city carved into the mountains: Petra Ancient City",
+                            Content = "Petra Ancient City, a unique destination where history, nature and architecture come together",
+                            Description = "A cultural heritage on the UNESCO World Heritage List",
+                            Url = "petra-jordan",
                             IsActive = true,
                             PublishedOn = DateTime.Now.AddDays(-15),
-                            Tags = context.Tags.Take(3).ToList(),
-                            Image = "3.png",
+                            // Tags = context.Tags.Take(1).ToList(),
+                            Tags = context.Tags.Where(t => t.Text == "jordan" || t.Text == "petra").ToList(),
+                            Image = "petra1.jpg",
                             UserId = 1,
                             Comments = new List<Comment>{
-                                new Comment {Text = "başarılı", PublishedOn = new DateTime(),UserId=1},
-                                new Comment {Text = "başarılı, tavsiye ederim", PublishedOn = new DateTime(),UserId=2}
+                                new Comment {Text = "I recommend you to visit Petra", PublishedOn = new DateTime(),UserId=1},
+                                new Comment {Text = "One of the new seven wonders of the world ", PublishedOn = new DateTime(),UserId=2}
                             }
                         },
                         new Post
                         {
-                            Title = "Unity ile oyun geliştirme",
-                            Content = "Unity editörü ile oyunlar geliştirebilirsiniz.",
-                            Description = "Unity editörünü tanıyalım",
-                            Url = "Unity-ile-oyun-geliştirme",
+                            Title = "Egypt Pyramids",
+                            Content = "The most famous of these magnificent structures, large and small, numbering more than a hundred, is the Pyramid of Cheops.",
+                            Description = "The Mystery of the Pyramids",
+                            Url = "One-of-7-wonders-of-the-world-the-pyramids-of-gize",
                             IsActive = true,
                             PublishedOn = DateTime.Now.AddDays(-10),
-                            Tags = context.Tags.Take(2).ToList(),
-                            Image = "2.png",
+                            // Tags = context.Tags.Take(2).ToList(),
+                            Tags = context.Tags.Where(t => t.Text == "egypt" || t.Text == "pyramids").ToList(),
+                            Image = "misir.jpg",
                             UserId = 2
                         },
                         new Post
                         {
-                            Title = "Full Stack Developer Olmak",
-                            Content = "Full Stack Developer Olmak Güzeldir.",
-                            Description = "Full Stack Developer nasıl olunur",
-                            Url = "Full-Stack-Developer",
+                            Title = "Vrelo Bosne",
+                            Content = "An incredibly beautiful natural park consisting of streams and ponds where you can find every shade of green together.",
+                            Description = "The Green Heart of Sarajevo",
+                            Url = "Bosna-Spring",
                             IsActive = true,
                             PublishedOn = DateTime.Now.AddDays(-5),
-                            Tags = context.Tags.Take(4).ToList(),
-                            Image = "1.png",
+                            // Tags = context.Tags.Take(4).ToList(),
+                            Tags = context.Tags.Where(t => t.Text == "bosnia").ToList(),
+                            Image = "bosna.jpg",
                             UserId = 1
                         }
                     );

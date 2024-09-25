@@ -84,7 +84,7 @@ namespace BlogApp.Controllers
                     userClaims.Add(new Claim(ClaimTypes.GivenName, isUser.Name ?? ""));
                     userClaims.Add(new Claim(ClaimTypes.UserData, isUser.Image ?? "")); //kullanicinin gorsel bilgisidir.
                     //auth islemi
-                    if (isUser.Email == "info@ahmetkaya.com")
+                    if (isUser.Email == "info@sedefnurkayran.com")
                     {
                         userClaims.Add(new Claim(ClaimTypes.Role, "admin"));
                     }
